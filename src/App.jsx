@@ -1,0 +1,18 @@
+
+
+import './App.css';
+import Counter from './components/Counter';
+import FetchData from './components/FetchData';
+
+function App () {
+
+  return (
+    <div className="App">
+      <Counter />
+      <FetchData url='https://jsonplaceholder.typicode.com/posts/' />
+
+    </div>
+  );
+}
+
+export default App;
