@@ -1,7 +1,8 @@
-import { useFetchStore } from "../stores";
+import { useBoundStore } from "../stores";
+
 
 const RenderObjectData = () => {
-    const { data } = useFetchStore();
+    const data = useBoundStore( state => state.data );
     return (
         <div>
             <p>{ data.title }</p>

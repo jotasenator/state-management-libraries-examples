@@ -1,8 +1,8 @@
-import { useFetchStore } from "../stores";
+import { useBoundStore } from "../stores";
 
 
 const RenderArrayData = () => {
-    const { data } = useFetchStore();
+    const data = useBoundStore( state => state.data );
     return (
         <>
             { data.map( ( { id, title } ) => (

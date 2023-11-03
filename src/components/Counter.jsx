@@ -1,7 +1,11 @@
-import { useCounterStore } from "../stores";
+import { useBoundStore } from "../stores";
+
 
 const Counter = () => {
-    const { counter, increment, decrement, reset } = useCounterStore();
+    const counter = useBoundStore( state => state.counter );
+    const increment = useBoundStore( state => state.increment );
+    const decrement = useBoundStore( state => state.decrement );
+    const reset = useBoundStore( state => state.reset );
 
     const handleIncrement = () => {
         return increment();

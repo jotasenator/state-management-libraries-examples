@@ -1,6 +1,7 @@
 import { create } from 'zustand';
+import { devtools } from 'zustand/middleware';
 
-const useFetchStore = create( set => ( {
+const useFetchStore = ( set ) => ( {
     data: [] || {},
     // fetch: ( url ) => {
     //     fetch( url )
@@ -13,8 +14,9 @@ const useFetchStore = create( set => ( {
         const response = await fetch( url );
         const json = await response.json();
 
-        set( state => ( { data: json } ) );
+        set( state => ( { data: json } ), false, 'fetchData' );
     }
-} ) );
+} );
+
 
 export default useFetchStore;
