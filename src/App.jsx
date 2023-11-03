@@ -7,7 +7,7 @@ function App () {
   return (
     <div className="App">
       <Counter />
-      <FetchData url="https://jsonplaceholder.typicode.com/posts/1" />
+      <FetchData url="https://jsonplaceholder.typicode.com/posts/" />
     </div>
   );
 }

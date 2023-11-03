@@ -5,17 +5,15 @@ import RenderArrayData from "./RenderArrayData";
 import RenderObjectData from "./RenderObjectData";
 
 const FetchData = ( { url } ) => {
-    useEffect( () => {
-        fetchStore.fetch( url );
-    }, [ url ] );
+    // useEffect( () => {
+    //     fetchStore.fetch( url );
+    // }, [ url ] );
 
     const isArrayOrObject = () => {
         const data = fetchStore.data;
-        if ( typeof data === "object" && !Array.isArray( data ) )
-        {
+        if ( typeof data === "object" && !Array.isArray( data ) ) {
             return "object";
-        } else
-        {
+        } else {
             return "array";
         }
     };
@@ -25,6 +23,7 @@ const FetchData = ( { url } ) => {
     return (
         <Suspense fallback={ <div>Loading...</div> }>
             <h2>Fetching data through Mobx from jsonplaceholder</h2>
+            <button onClick={ () => fetchStore.fetch( url ) }>Fetch data!</button>
 
             { arrayOrObject === "array" ? <RenderArrayData /> : "" }
 
